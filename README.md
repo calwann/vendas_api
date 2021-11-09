@@ -9,7 +9,7 @@
 
 ## Instação
 
-- É necessário possui o [docker](https://www.docker.com/get-started) instalado.
+- É necessário possuir o [docker](https://www.docker.com/get-started) instalado.
 - Configurar as variáveis de ambiente do arquivo docker-compose.yml
 - Executar o arquivo docker-compose.yml
 - Criar o Banco de Dados com o nome configurado na variável de ambiente.
