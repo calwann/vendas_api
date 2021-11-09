@@ -1,3 +1,67 @@
+# Vendas API
+
+## Instação
+
+- É necessário possuir o [docker](https://www.docker.com/get-started) instalado.
+- Configurar as variáveis de ambiente do arquivo docker-compose.yml
+- Executar o arquivo docker-compose.yml
+- Criar o Banco de Dados com o nome configurado na variável de ambiente.
+
+## Utilização
+
+- Realizar o login e o cadastro de usuário: [/login](http://localhost:3000/login) [/register](http://localhost:3000/register).
+- Realizar cadastro de usuário ou lojista: [/register](http://localhost:3000/register).
+
+## Utilização da API 
+
+### Token de autenticação
+- Método: POST
+- Rota: /api/login
+- Cabeçalho: 
+```bash
+Content-Type: application/json
+```
+- Corpo:
+```php
+{
+	"email":"fulando@email.com",
+	"password": "123456789"
+}
+```
+
+### Transferir valores entre contas
+- Método: POST
+- Rota: /api/transaction/transfer
+- Cabeçalho: 
+```bash
+Content-Type: application/json
+x-req: ***TOKEN***
+```
+- Corpo:
+```php
+{
+    "value" : 100.00,
+    "payer" : 1,
+    "payee" : 2
+}
+```
+
+### Depositar valor
+- Método: POST
+- Rota: /api/transaction/deposit
+- Cabeçalho: 
+```bash
+Content-Type: application/json
+x-req: ***TOKEN***
+```
+- Corpo:
+```php
+{
+    "value" : 100.00,
+    "user" : 1
+}
+```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -6,13 +70,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-
-## Instação
-
-- É necessário possuir o [docker](https://www.docker.com/get-started) instalado.
-- Configurar as variáveis de ambiente do arquivo docker-compose.yml
-- Executar o arquivo docker-compose.yml
-- Criar o Banco de Dados com o nome configurado na variável de ambiente.
 
 ## About Laravel
 
